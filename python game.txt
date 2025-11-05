@@ -1,0 +1,35 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Set up the game window dimensions
+screen_width = 800
+screen_height = 600
+screen = pygame.display.set_mode((screen_width, screen_height))
+
+# Set the window title
+pygame.display.set_caption("My First Pygame Window")
+
+# Define colors (RGB tuples)
+BLUE = (0, 0, 255)
+RED = (255, 0, 0)
+
+# Game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Fill the background color
+    screen.fill(BLUE)
+
+    # Draw a simple rectangle (player character)
+    pygame.draw.rect(screen, RED, (screen_width // 2 - 25, screen_height // 2 - 25, 50, 50)) # Center a 50x50 red square
+
+    # Update the display
+    pygame.display.update()
+
+# Quit Pygame
+pygame.quit()
